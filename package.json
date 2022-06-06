@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webdav-fs": "^1.6.0"
+    "webdav-fs": "^4.0.0"
   },
   "dependencies": {
-    "jsDAV": "^0.3.4"
+    "cors-anywhere": "^0.4.4",
+    "jsDAV": "^0.3.4",
+    "package.json": "^2.0.1"
   }
 }
