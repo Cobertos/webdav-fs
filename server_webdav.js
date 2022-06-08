@@ -1,15 +1,11 @@
-const jsDAV = require("jsDAV");
-const cors_proxy = require('cors-anywhere');
-//jsDAV.debugMode = true;
+const webdav = require('webdav-server').v2;
+const express = require('express');
 
-jsDAV.createServer({
-    node: __dirname + "/data"
-}, 8000);
-
-cors_proxy.createServer({
-    originWhitelist: [], // Allow all origins
-    //requireHeader: ['origin', 'x-requested-with'],
-    removeHeaders: ['cookie', 'cookie2']
-}).listen(7769, '0.0.0.0', function() {
-    console.log('Running CORS Anywhere on 0.0.0.0:7769');
+const server = new webdav.WebDAVServer({
+    rootFileSystem: new webdav.PhysicalFileSystem('./data')
 });
+const app = express();
+
+// Mount the WebDAVServer instance
+app.use(webdav.extensions.express('/somewhere', server));
+app.listen(8000); // Start the Express server

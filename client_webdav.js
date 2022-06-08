@@ -1,7 +1,7 @@
 const { createAdapter } = require("webdav-fs");
-const wfs = createAdapter("http://127.0.0.1:7769/http://127.0.0.1:8000", {});
+const wfs2 = createAdapter("http://127.0.0.1:8000/somewhere/", {});
 
-wfs.readdir("/", "stat", function(err, c){
+wfs2.readdir("level1/", "stat", function(err, c){
     if(err){ console.error(err); }
     else{ console.log(c); }
 });

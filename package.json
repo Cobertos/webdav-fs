@@ -12,8 +12,8 @@
     "webdav-fs": "^4.0.0"
   },
   "dependencies": {
-    "cors-anywhere": "^0.4.4",
-    "jsDAV": "^0.3.4",
-    "package.json": "^2.0.1"
+    "express": "^4.18.1",
+    "package.json": "^2.0.1",
+    "webdav-server": "^2.6.2"
   }
 }
